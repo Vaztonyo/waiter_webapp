@@ -1,0 +1,38 @@
+{
+  "name": "waiter_webapp",
+  "version": "1.0.0",
+  "description": "Waiter Availability Webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaztonyo/waiter_webapp.git"
+  },
+  "keywords": [
+    "waiter",
+    "add",
+    "login",
+    "admin",
+    "days"
+  ],
+  "engines": {
+    "node": "8.3.0"
+  },
+  "author": "Vaztonyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vaztonyo/waiter_webapp/issues"
+  },
+  "homepage": "https://github.com/Vaztonyo/waiter_webapp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "express-flash": "git://github.com/RGBboy/express-flash.git",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "node": "^8.3.0",
+    "nodemon": "^1.12.1"
+  }
+}
