@@ -1,11 +1,28 @@
 
+<div class="container">
 
 <div class="input" align="center">
 
-
-      <form class="" action="/" method="post" data-toggle="validator">
-          <input type="text" name="regNumber" required="true" placeholder="Enter Your Name">
+<br>
+      <form class="" action="/waiters" method="post" data-toggle="validator">
+        <h2>Add A New Waiter:</h2>
+          <input type="text" class="addWaiter" name="waiter" required="true" placeholder="Enter Your Name">
           <input type="submit" class="button" name="addBtn" value="Add">
       </form>
 
   </div><br>
+
+<div align="center">
+      <h3>Waiters Available:</h3>
+
+    <ul class="list">
+
+      {{#each waiters}}
+      <a href="/waiters/{{this}}">
+        <li>{{this}}</li>
+        </a>
+      {{/each}}
+    </ul>
+</div>
+
+</div>

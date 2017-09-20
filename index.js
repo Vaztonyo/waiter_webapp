@@ -7,6 +7,8 @@ const flash = require('express-flash');
 
 const WaiterWebRoutes = require('./waiter-webapp');
 
+const waiterWebRoutes = WaiterWebRoutes();
+
 var app = express();
 
 app.set('trust proxy', 1) // trust first proxy
@@ -31,27 +33,20 @@ app.use(express.static('views')); //use static views
 
 var format = require('util').format;
 
-app.get('/', WaiterWebRoutes.waiters);
-// app.get('/', regNumberRoutes.add);
-// app.post('/add', WaiterWebRoutes.add);
+app.get('/waiters', waiterWebRoutes.waiters);
+app.post('/waiters', waiterWebRoutes.waiters)
+app.get('/waiters/:username', waiterWebRoutes.waiter);
+app.post('/waiters/:username', waiterWebRoutes.waiter);
 // app.get('/', WaiterWebRoutes.days);
-// app.post('/', WaiterWebRoutes.filter);
 
 
+app.get('/', function(req, res){
+  res.redirect('/waiters');
+})
 
 
+const port = process.env.PORT || 5000;
 
-var server = app.listen(process.env.PORT || 5000, function() {
-
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('Webapp starts at http://%s:%s', host, port);
-
+app.listen(port, function() {
+  console.log('Web app started on port : ' + port);
 });
-
-// const port = process.env.PORT || 5000;
-//
-// app.listen(port, function() {
-//   console.log('Web app started on port : ' + port);
-// });
