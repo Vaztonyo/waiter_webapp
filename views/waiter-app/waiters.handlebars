@@ -1,11 +1,21 @@
-
 <div class="container">
-
+  <a href="/days">See Available Waiters</a>
+<br><br>
 <div class="input" align="center">
-
-<br>
-      <form class="" action="/waiters" method="post" data-toggle="validator">
+      <form class="" action="/waiters/add" method="post" data-toggle="validator">
         <h2>Add A New Waiter:</h2>
+        {{#if messages.error}}
+        <div class="error">
+          {{messages.error}}
+          <br>
+        </div>
+        {{/if}}
+        {{#if messages.success}}
+        <div class="success">
+          {{messages.success}}
+          <br>
+        </div>
+        {{/if}}
           <input type="text" class="addWaiter" name="waiter" required="true" placeholder="Enter Your Name">
           <input type="submit" class="button" name="addBtn" value="Add">
       </form>
@@ -13,13 +23,13 @@
   </div><br>
 
 <div align="center">
-      <h3>Waiters Available:</h3>
+      <h2>Waiters Available:</h2>
 
     <ul class="list">
 
       {{#each waiters}}
-      <a href="/waiters/{{this}}">
-        <li>{{this}}</li>
+      <a href="/waiters/{{username}}">
+        <li>{{username}}</li>
         </a>
       {{/each}}
     </ul>

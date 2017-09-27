@@ -1,14 +1,15 @@
 html, body {
     margin: auto;
-    color: white;
     padding: auto;
+    font-family: 'Indie Flower', cursive;
     background: linear-gradient(to right, royalblue, royalblue);
 }
 
 .container{
-  height: 85%;
-  width: 100%;
+  height: 95%;
+  width: 85%;
   background-color: white;
+  overflow: hidden;
 }
 
 .addWaiter{
@@ -22,10 +23,42 @@ html, body {
   border-radius: 4px;
 }
 
+.days{
+  text-shadow: 5px 3px 4px ivory;
+}
+
+.list{
+  font-size: 23px;
+}
+
+.avail{
+  float: right;
+}
+
 ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+h1, h2, h3{
+  text-shadow: 5px 3px 4px royalblue;
+}
+
+.error{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: cursive;
+  color: #2243B6;
+  text-shadow: 5px 3px 4px #CCFF00;
+}
+
+.success{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: cursive;
+  color: #004B8D;
+  text-shadow: 5px 3px 4px #CCFF00;
 }
 
 .button {
@@ -81,4 +114,42 @@ ul{
     color: #FFF;
     background-color: #1EAEDB;
     border-color: #1EAEDB;
+}
+
+.card-body p a{
+  text-decoration: none;
+  color: black;
+  height: 30%;
+  font-weight: bold;
+}
+.row .d-flex{
+  background-color: red;
+}
+
+.row .col-lg-2 {
+  border: 0px solid #324b5c;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px;
+  /*height: 20px;*/
+  float: center;
+}
+
+.row .col-lg-2 li{
+  display: inline-block;
+  text-align: center;
+}
+
+.card-header{
+  color: black;
+  font-size: 30px;
+}
+.displayDaysNames{
+  color: black;
+}
+
+.goMain{
+  color: silver;
 }

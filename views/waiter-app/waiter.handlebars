@@ -1,41 +1,41 @@
-
 <div class="container">
-<form action="/waiters/:username" method="post" data-toggle="validator">
   <a href="/waiters">Go To Main Page</a>
+  <a class="avail" href="/days">See Available Waiters</a>
 <br><br>
 
 
-<div class="check" align="center">
-  <h1>Choose Days Available To Work:</h1><br>
+<form action="" method="post" data-toggle="validator">
+<div class="check" align="center" required="true">
+  <h1>{{resultOfWaiter}}</h1><br>
 
   <label class="radio-inline">
-      <input type="checkbox" class="" name="day" required="true" value="sunday"><b>Sunday
+      <input type="checkbox" name="day" value="Sunday" {{#if days.Sunday}} checked {{/if}}><b>Sunday
     </label>
 
     <label class="radio-inline">
-        <input type="checkbox" class="" name="day" required="true" value="monday"><b>Monday
+        <input type="checkbox" name="day" value="Monday" {{#if days.Monday}} checked {{/if}}><b>Monday
     </label>
 
     <label class="radio-inline">
-        <input type="checkbox" class="" name="day" required="true" value="tuesday"><b>Tuesday
+        <input type="checkbox" name="day" value="Tuesday" {{#if days.Tuesday}} checked {{/if}}><b>Tuesday
     </label>
 
     <label class="radio-inline">
-        <input type="checkbox" class="" name="day" required="true" value="wednesday"><b>Wednesday
+        <input type="checkbox" name="day" value="Wednesday" {{#if days.Wednesday}} checked {{/if}}><b>Wednesday
     </label><br>
 
     <label class="radio-inline">
-        <input type="checkbox" class="" name="day" required="true" value="thursday"><b>Thursday
+        <input type="checkbox" name="day" value="Thursday" {{#if days.Thursday}} checked {{/if}}><b>Thursday
     </label>
 
     <label class="radio-inline">
-        <input type="checkbox" class="" name="day" required="true" value="friday"><b>Friday
+        <input type="checkbox" name="day" value="Friday" {{#if days.Friday}} checked {{/if}}><b>Friday
     </label>
 
     <label class="radio-inline">
-        <input type="checkbox" class="" name="day" required="true" value="saturday"><b>Saturday
+        <input type="checkbox" name="day" value="Saturday" {{#if days.Saturday}} checked {{/if}}><b>Saturday
     </label><br><br>
-    <input type="submit" class="button" name="submit" value="Submit">
+    <input type="submit" class="button" name="submit" value="Submit" required>
 
   </div>
   </form>

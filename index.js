@@ -7,7 +7,11 @@ const flash = require('express-flash');
 
 const WaiterWebRoutes = require('./waiter-webapp');
 
-const waiterWebRoutes = WaiterWebRoutes();
+const Models = require('./models');
+const mongoURL = process.env.MONGO_DB_URL || 'mongodb://localhost/waiters';
+const models = Models(mongoURL);
+
+const waiterWebRoutes = WaiterWebRoutes(models);
 
 var app = express();
 
@@ -34,10 +38,11 @@ app.use(express.static('views')); //use static views
 var format = require('util').format;
 
 app.get('/waiters', waiterWebRoutes.waiters);
-app.post('/waiters', waiterWebRoutes.waiters)
+app.post('/waiters', waiterWebRoutes.waiters);
+app.post('/waiters/add', waiterWebRoutes.add);
 app.get('/waiters/:username', waiterWebRoutes.waiter);
 app.post('/waiters/:username', waiterWebRoutes.waiter);
-// app.get('/', WaiterWebRoutes.days);
+app.get('/days', waiterWebRoutes.days);
 
 
 app.get('/', function(req, res){
