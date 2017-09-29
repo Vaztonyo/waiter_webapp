@@ -128,8 +128,9 @@ h1, h2, h3{
 
 .row .col-lg-2 {
   border: 0px solid #324b5c;
-  background-color: black;
-  color: white;
+  background-color: royalblue;
+  color: black;
+  font-size: 24px;
   text-align: center;
   font-weight: bold;
   margin: 10px;
