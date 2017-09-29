@@ -77,7 +77,10 @@ const add = function(req, res, next) {
         }
       }
       console.log(req.params.username);
-      res.render('waiter-app/waiter', {resultOfWaiter});
+      res.render('waiter-app/waiter', {
+        days: days,
+        resultOfWaiter: resultOfWaiter
+      });
     })
   }
 
