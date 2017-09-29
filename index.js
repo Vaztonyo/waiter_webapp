@@ -43,6 +43,9 @@ app.post('/waiters/add', waiterWebRoutes.add);
 app.get('/waiters/:username', waiterWebRoutes.waiter);
 app.post('/waiters/:username', waiterWebRoutes.waiter);
 app.get('/days', waiterWebRoutes.days);
+app.post('/days', waiterWebRoutes.days);
+app.post('/days/reset', waiterWebRoutes.reset);
+
 
 
 app.get('/', function(req, res){

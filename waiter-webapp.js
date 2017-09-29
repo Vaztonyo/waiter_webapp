@@ -160,13 +160,26 @@ const days = function(req, res, next){
    });
  }
 
+ const reset = function(req, res, next) {
+    var reset = req.body.reset;
+    if (reset) {
+      waiterFind.remove({}, function(err){
+        if(err){
+          return next(err);
+        }
+        res.redirect('/days');
+      });
+    }
+ }
+
 
   return {
     waiters,
     add,
     waiter,
     dayColor,
-    days
+    days,
+    reset
   }
 
 };
