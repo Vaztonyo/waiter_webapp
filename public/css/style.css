@@ -15,7 +15,7 @@ html, body {
 .addWaiter{
   width: 25%;
   background-color: lightblue;
-  color: red;
+  color: blue;
   padding: 8px 12px;
   margin: 8px 0;
   display: inline-block;
