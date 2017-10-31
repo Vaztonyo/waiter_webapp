@@ -66,20 +66,21 @@ const add = function(req, res, next) {
         return next(err);
       }else if (!waiters) {
         waiterFind.create({
-          username: req.params.username,
+          // username: req.params.username,
           days: daysObject
         });
       } else {
         if (waiters){
-          var resultOfWaiter = 'Hi, ' + waiters.username + '. Please Select The Days You Are Available To Work:'
-        } else {
-          var resultOfWaiter = 'Sorry, but this waiter was not found, please add it to the waiter list.'
+          var resultOfWaiter = 'Hi, ' + waiters.username + '. Please Select The Days You Are Available To Work:';
+        } if(waiters && days){
+          var resultofDays = 'Days That Were Selected:' + days;
         }
       }
       console.log(req.params.username);
       res.render('waiter-app/waiter', {
         days: days,
-        resultOfWaiter: resultOfWaiter
+        resultOfWaiter: resultOfWaiter,
+        resultofDays: resultofDays
       });
     })
   }
